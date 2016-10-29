@@ -11,6 +11,25 @@ import UIKit
 class ViewController: UIViewController {
     var yellowSquare: UIView?
 
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var frameXLabel: UILabel!
+    
+    @IBOutlet weak var frameYLabel: UILabel!
+    
+    @IBOutlet weak var boundsXLabel: UILabel!
+    
+    @IBOutlet weak var boundsYLabel: UILabel!
+    
+    @IBOutlet weak var frameXSlider: UISlider!
+    
+    @IBOutlet weak var frameYSlider: UISlider!
+    
+    @IBOutlet weak var boundsXSlider: UISlider!
+    
+    @IBOutlet weak var boundsYSlider: UISlider!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateLabels()

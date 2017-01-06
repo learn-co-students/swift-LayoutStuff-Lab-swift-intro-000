@@ -77,14 +77,78 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="hhx-8C-qVb">
+                                <rect key="frame" x="18" y="415" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="frameWidthChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4QK-KD-i8y"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="0av-nu-GK2">
+                                <rect key="frame" x="18" y="453" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="frameHeigthChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="qky-vR-4fW"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="6o9-mT-pez">
+                                <rect key="frame" x="18" y="530" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="boundsWidthChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="fzn-xc-XVc"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="AXQ-K7-dkZ">
+                                <rect key="frame" x="18" y="568" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="boundsHeightChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="yL4-WN-bre"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="frame width = ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="29Q-Dn-fcg">
+                                <rect key="frame" x="142" y="415" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="bound width = ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aCj-Fz-KXe">
+                                <rect key="frame" x="142" y="535" width="124" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="bound height = ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AII-ax-dLM">
+                                <rect key="frame" x="142" y="577" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="frame height = ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QAl-cL-8mZ">
+                                <rect key="frame" x="142" y="458" width="126" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="boundsHeightLabel" destination="AII-ax-dLM" id="CQS-Q5-3h7"/>
+                        <outlet property="boundsHeightSlider" destination="AXQ-K7-dkZ" id="GSg-bI-P43"/>
+                        <outlet property="boundsWidthLabel" destination="aCj-Fz-KXe" id="a2c-ri-1qR"/>
+                        <outlet property="boundsWidthSlider" destination="6o9-mT-pez" id="p92-xO-dZX"/>
                         <outlet property="boundsXLabel" destination="msV-mm-73P" id="ULn-RD-BgY"/>
                         <outlet property="boundsXSlider" destination="csx-2K-OHo" id="SF5-1I-hYn"/>
                         <outlet property="boundsYLabel" destination="qVP-Q8-gfA" id="Pr3-Ug-4Dz"/>
                         <outlet property="boundsYSlider" destination="BEI-Ad-CV4" id="jV3-mt-dMF"/>
+                        <outlet property="frameHeightLabel" destination="QAl-cL-8mZ" id="aip-qk-7Ty"/>
+                        <outlet property="frameHeightSlider" destination="0av-nu-GK2" id="Ng1-an-kMJ"/>
+                        <outlet property="frameWidthLabel" destination="29Q-Dn-fcg" id="OoI-MO-32E"/>
+                        <outlet property="frameWidthSlider" destination="hhx-8C-qVb" id="zxb-UB-WL9"/>
                         <outlet property="frameXLabel" destination="yLl-5P-LrC" id="eck-Oi-4MP"/>
                         <outlet property="frameXSlider" destination="RmC-fU-Fip" id="OUM-8A-Njr"/>
                         <outlet property="frameYLabel" destination="eiv-8P-Yt2" id="m5u-Ey-erc"/>
@@ -94,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149" y="319"/>
+            <point key="canvasLocation" x="148.5" y="318.5"/>
         </scene>
     </scenes>
     <resources>

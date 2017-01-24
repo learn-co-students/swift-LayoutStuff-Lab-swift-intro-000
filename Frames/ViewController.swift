@@ -18,6 +18,21 @@ class ViewController: UIViewController {
         updateYellowSquare()
     }
 
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var frameXSlider: UISlider!
+    @IBOutlet weak var frameYSlider: UISlider!
+    @IBOutlet weak var boundsXSlider: UISlider!
+    @IBOutlet weak var boundsYSlider: UISlider!
+    
+    @IBOutlet weak var frameXLabel: UILabel!
+    @IBOutlet weak var frameYLabel: UILabel!
+    @IBOutlet weak var boundsXLabel: UILabel!
+    @IBOutlet weak var boundsYLabel: UILabel!
+    
+    
+    
+    
     fileprivate func updateLabels() {
         let frame = imageView.frame
         let bounds = imageView.bounds

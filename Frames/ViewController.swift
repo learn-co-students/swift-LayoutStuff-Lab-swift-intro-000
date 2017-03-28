@@ -9,6 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var frameXSlider: UISlider!
+    @IBOutlet weak var frameYSlider: UISlider!
+    @IBOutlet weak var boundsXSlider: UISlider!
+    @IBOutlet weak var boundsYSlider: UISlider!
+    @IBOutlet weak var framesWidth: UISlider!
+    @IBOutlet weak var framesHeight: UISlider!
+    @IBOutlet weak var boundsWidth: UISlider!
+    @IBOutlet weak var boundsHeight: UISlider!
+    
+    @IBOutlet weak var frameXLabel: UILabel!
+    @IBOutlet weak var frameYLabel: UILabel!
+    @IBOutlet weak var boundsXLabel: UILabel!
+    @IBOutlet weak var boundsYLabel: UILabel!
+    @IBOutlet weak var framesWidthLabel: UILabel!
+    @IBOutlet weak var framesHeightLabel: UILabel!
+    @IBOutlet weak var boundsWidthLabel: UILabel!
+     @IBOutlet weak var boundsHeightLabel: UILabel!
+    
     var yellowSquare: UIView?
 
     override func viewDidLoad() {
@@ -17,7 +37,7 @@ class ViewController: UIViewController {
         updateSliders()
         updateYellowSquare()
     }
-
+    
     fileprivate func updateLabels() {
         let frame = imageView.frame
         let bounds = imageView.bounds
@@ -43,6 +63,7 @@ class ViewController: UIViewController {
         boundsYSlider.maximumValue = Float(bounds.size.height)
         boundsXSlider.value = Float(bounds.origin.x)
         boundsYSlider.value = Float(bounds.origin.y)
+        
     }
 
     fileprivate func updateYellowSquare() {
@@ -74,4 +95,5 @@ class ViewController: UIViewController {
         imageView.bounds.origin.y = CGFloat(sender.value)
         updateLabels()
     }
+    
 }

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -10,28 +14,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Frames" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kitty.png" id="EJf-5n-hZP">
-                                <rect key="frame" x="56" y="20" width="209" height="152"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="RmC-fU-Fip">
                                 <rect key="frame" x="18" y="206" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="frameXChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="MhW-r4-r7s"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="OIO-Ve-Up4">
                                 <rect key="frame" x="18" y="244" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="frameYChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="EP0-56-x8l"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="csx-2K-OHo">
                                 <rect key="frame" x="18" y="304" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="boundsXChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="b9X-ir-uej"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="BEI-Ad-CV4">
                                 <rect key="frame" x="18" y="342" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="boundsYChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="X6b-ev-3Ko"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="frame x = ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yLl-5P-LrC">
                                 <rect key="frame" x="142" y="210" width="158" height="21"/>
@@ -61,16 +73,100 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="width f = ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vqy-k8-ErJ">
+                                <rect key="frame" x="142" y="403" width="158" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="height f = ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c66-Z9-use">
+                                <rect key="frame" x="142" y="441" width="158" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="width b = ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ayv-6M-L76">
+                                <rect key="frame" x="142" y="500" width="158" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="xaG-Ta-VHS">
+                                <rect key="frame" x="18" y="398" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="boundsYChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="bUE-eO-gWD"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="gHl-Y6-Lwo">
+                                <rect key="frame" x="18" y="436" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="boundsYChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="weq-f6-UOy"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="Y1S-MF-Oee">
+                                <rect key="frame" x="18" y="495" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="boundsYChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="GNl-7P-Nry"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="PBK-5v-qRZ">
+                                <rect key="frame" x="18" y="533" width="118" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="boundsYChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="2WZ-xi-mb1"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="height b = ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uzx-qt-2a6">
+                                <rect key="frame" x="142" y="538" width="158" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Kitty.png" id="EJf-5n-hZP">
+                                <rect key="frame" x="83" y="20" width="209" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="boundsHeight" destination="uzx-qt-2a6" id="r11-bS-P1o"/>
+                        <outlet property="boundsHeightLabel" destination="uzx-qt-2a6" id="10q-ca-9Km"/>
+                        <outlet property="boundsWidth" destination="ayv-6M-L76" id="bxf-rO-zTE"/>
+                        <outlet property="boundsWidthLabel" destination="ayv-6M-L76" id="f9f-N5-tK3"/>
+                        <outlet property="boundsXLabel" destination="msV-mm-73P" id="EPk-mv-rjR"/>
+                        <outlet property="boundsXSlider" destination="csx-2K-OHo" id="XkS-H9-1My"/>
+                        <outlet property="boundsYLabel" destination="qVP-Q8-gfA" id="X1a-1U-oML"/>
+                        <outlet property="boundsYSlider" destination="BEI-Ad-CV4" id="KWR-Bn-XV5"/>
+                        <outlet property="frameXLabel" destination="yLl-5P-LrC" id="ubc-Zn-EFC"/>
+                        <outlet property="frameXSlider" destination="RmC-fU-Fip" id="rfF-Gp-WZb"/>
+                        <outlet property="frameYLabel" destination="eiv-8P-Yt2" id="Nc5-ig-RuD"/>
+                        <outlet property="frameYSlider" destination="OIO-Ve-Up4" id="Y9D-qK-eoo"/>
+                        <outlet property="framesHeight" destination="c66-Z9-use" id="8tT-X2-uLd"/>
+                        <outlet property="framesHeightLabel" destination="c66-Z9-use" id="ZEJ-V9-31l"/>
+                        <outlet property="framesWidth" destination="vqy-k8-ErJ" id="RLa-wi-Qrz"/>
+                        <outlet property="framesWidthLabel" destination="vqy-k8-ErJ" id="RkC-ek-m03"/>
+                        <outlet property="imageView" destination="EJf-5n-hZP" id="H0b-7C-jYD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149" y="319"/>
+            <point key="canvasLocation" x="148.5" y="318.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="Kitty.png" width="417" height="303"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

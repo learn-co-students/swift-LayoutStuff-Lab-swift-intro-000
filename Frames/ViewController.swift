@@ -15,12 +15,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var frameYSlider: UISlider!
     @IBOutlet weak var boundsXSlider: UISlider!
     @IBOutlet weak var boundsYSlider: UISlider!
+    @IBOutlet weak var framesWidth: UISlider!
+    @IBOutlet weak var framesHeight: UISlider!
+    @IBOutlet weak var boundsWidth: UISlider!
+    @IBOutlet weak var boundsHeight: UISlider!
     
     @IBOutlet weak var frameXLabel: UILabel!
     @IBOutlet weak var frameYLabel: UILabel!
     @IBOutlet weak var boundsXLabel: UILabel!
     @IBOutlet weak var boundsYLabel: UILabel!
-    
+    @IBOutlet weak var framesWidthLabel: UILabel!
+    @IBOutlet weak var framesHeightLabel: UILabel!
+    @IBOutlet weak var boundsWidthLabel: UILabel!
+     @IBOutlet weak var boundsHeightLabel: UILabel!
     
     var yellowSquare: UIView?
 
@@ -30,6 +37,13 @@ class ViewController: UIViewController {
         updateSliders()
         updateYellowSquare()
     }
+    
+    //TODO:
+    /*
+        = Create 4 IBAction func's for the 4 new sliders to increase/decrease image and the yellow square's height and width
+        = Add the text changing as the slides are moved
+        = Sync the label to changing values as the image is being manipulated
+     */
 
     fileprivate func updateLabels() {
         let frame = imageView.frame
@@ -87,4 +101,18 @@ class ViewController: UIViewController {
         imageView.bounds.origin.y = CGFloat(sender.value)
         updateLabels()
     }
+    
+    // Insert the IB function to update the labels.
+    
+    
+    1
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

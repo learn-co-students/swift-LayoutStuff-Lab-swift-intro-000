@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    //where the image of a cat is at
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var frameXSlider: UISlider!
     @IBOutlet weak var frameYSlider: UISlider!
@@ -38,13 +38,6 @@ class ViewController: UIViewController {
         updateYellowSquare()
     }
     
-    //TODO:
-    /*
-        = Create 4 IBAction func's for the 4 new sliders to increase/decrease image and the yellow square's height and width
-        = Add the text changing as the slides are moved
-        = Sync the label to changing values as the image is being manipulated
-     */
-
     fileprivate func updateLabels() {
         let frame = imageView.frame
         let bounds = imageView.bounds
@@ -70,6 +63,7 @@ class ViewController: UIViewController {
         boundsYSlider.maximumValue = Float(bounds.size.height)
         boundsXSlider.value = Float(bounds.origin.x)
         boundsYSlider.value = Float(bounds.origin.y)
+        
     }
 
     fileprivate func updateYellowSquare() {
@@ -101,18 +95,5 @@ class ViewController: UIViewController {
         imageView.bounds.origin.y = CGFloat(sender.value)
         updateLabels()
     }
-    
-    // Insert the IB function to update the labels.
-    
-    
-    1
-    
-    
-    
-    
-    
-    
-    
-    
     
 }

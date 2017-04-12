@@ -10,6 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     var yellowSquare: UIView?
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var frameXSlider: UISlider!
+    @IBOutlet var frameYSlider: UISlider!
+    @IBOutlet var boundsXSlider: UISlider!
+    @IBOutlet var boundsYSlider: UISlider!
+    @IBOutlet var frameXLabel: UILabel!
+    @IBOutlet var frameYLabel: UILabel!
+    @IBOutlet var boundsXLabel: UILabel!
+    @IBOutlet var boundsYLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,11 +75,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func boundsXChanged(_ sender: UISlider) {
+        //yellowSquare!.frame.origin.x = CGFloat(sender.value)
         imageView.bounds.origin.x = CGFloat(sender.value)
         updateLabels()
     }
 
     @IBAction func boundsYChanged(_ sender: UISlider) {
+        //yellowSquare!.frame.origin.y = CGFloat(sender.value)
         imageView.bounds.origin.y = CGFloat(sender.value)
         updateLabels()
     }

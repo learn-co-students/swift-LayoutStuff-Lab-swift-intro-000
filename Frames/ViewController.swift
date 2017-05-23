@@ -11,6 +11,24 @@ import UIKit
 class ViewController: UIViewController {
     var yellowSquare: UIView?
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var frameXSlider: UISlider!
+    @IBOutlet weak var frameYSlider: UISlider!
+    @IBOutlet weak var frameWidthSlider: UISlider!
+    @IBOutlet weak var frameHeightSlider: UISlider!
+    @IBOutlet weak var boundsXSlider: UISlider!
+    @IBOutlet weak var boundsYSlider: UISlider!
+    @IBOutlet weak var boundsWidthSlider: UISlider!
+    @IBOutlet weak var boundsHeightSlider: UISlider!
+    @IBOutlet weak var frameXLabel: UILabel!
+    @IBOutlet weak var frameYLabel: UILabel!
+    @IBOutlet weak var frameWidthLabel: UILabel!
+    @IBOutlet weak var frameHeightLabel: UILabel!
+    @IBOutlet weak var boundsXLabel: UILabel!
+    @IBOutlet weak var boundsYLabel: UILabel!
+    @IBOutlet weak var boundsWidthLabel: UILabel!
+    @IBOutlet weak var boundsHeightLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateLabels()
@@ -21,12 +39,16 @@ class ViewController: UIViewController {
     fileprivate func updateLabels() {
         let frame = imageView.frame
         let bounds = imageView.bounds
-
+        
         frameXLabel.text = "frame x = \(frame.origin.x)"
         frameYLabel.text = "frame y = \(frame.origin.y)"
-
+        frameWidthLabel.text = "frame W = \(frame.width)"
+        frameHeightLabel.text = "frame H = \(frame.height)"
+        
         boundsXLabel.text = "bounds x = \(bounds.origin.x)"
         boundsYLabel.text = "bounds y = \(bounds.origin.y)"
+        boundsWidthLabel.text = "bounds W = \(bounds.width)"
+        boundsHeightLabel.text = "bounds H = \(bounds.height)"
     }
 
     fileprivate func updateSliders() {
@@ -38,11 +60,19 @@ class ViewController: UIViewController {
         frameYSlider.maximumValue = Float(superFrame.size.height)
         frameXSlider.value = Float(frame.origin.x)
         frameYSlider.value = Float(frame.origin.y)
+        frameWidthSlider.maximumValue = 250.0
+        frameHeightSlider.maximumValue = 200.0
+        frameWidthSlider.value = 209.0
+        frameHeightSlider.value = 152.0
 
         boundsXSlider.maximumValue = Float(bounds.size.width)
         boundsYSlider.maximumValue = Float(bounds.size.height)
         boundsXSlider.value = Float(bounds.origin.x)
         boundsYSlider.value = Float(bounds.origin.y)
+        boundsWidthSlider.maximumValue = 250.0
+        boundsHeightSlider.maximumValue = 200.0
+        boundsWidthSlider.value = 209.0
+        boundsHeightSlider.value = 152.0
     }
 
     fileprivate func updateYellowSquare() {
@@ -65,6 +95,16 @@ class ViewController: UIViewController {
         updateLabels()
     }
 
+    @IBAction func frameWidthChanged(_ sender: UISlider) {
+        imageView.frame = CGRect(x: imageView.frame.origin.x, y: imageView.frame.origin.y, width: CGFloat(sender.value), height: imageView.frame.height)
+        updateLabels()
+    }
+    
+    @IBAction func frameHeightChanged(_ sender: UISlider) {
+        imageView.frame = CGRect(x: imageView.frame.origin.x, y: imageView.frame.origin.y, width: imageView.frame.height, height: CGFloat(sender.value))
+        updateLabels()
+    }
+
     @IBAction func boundsXChanged(_ sender: UISlider) {
         imageView.bounds.origin.x = CGFloat(sender.value)
         updateLabels()
@@ -72,6 +112,16 @@ class ViewController: UIViewController {
 
     @IBAction func boundsYChanged(_ sender: UISlider) {
         imageView.bounds.origin.y = CGFloat(sender.value)
+        updateLabels()
+    }
+    
+    @IBAction func boundsWidthChanged(_ sender: UISlider) {
+        imageView.bounds = CGRect(x: imageView.bounds.origin.x, y: imageView.bounds.origin.y, width: CGFloat(sender.value), height: imageView.bounds.height)
+        updateLabels()
+    }
+    
+    @IBAction func boundsHeightChanged(_ sender: UISlider) {
+        imageView.bounds = CGRect(x: imageView.bounds.origin.x, y: imageView.bounds.origin.y, width: imageView.bounds.height, height: CGFloat(sender.value))
         updateLabels()
     }
 }

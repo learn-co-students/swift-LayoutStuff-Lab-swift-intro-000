@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,18 +24,30 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="RmC-fU-Fip">
                                 <rect key="frame" x="18" y="206" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="frameXChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="wbK-Cy-552"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="OIO-Ve-Up4">
                                 <rect key="frame" x="18" y="244" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="frameYChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ist-8S-OFv"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="csx-2K-OHo">
                                 <rect key="frame" x="18" y="304" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="boundsXChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="080-m6-tdi"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="BEI-Ad-CV4">
                                 <rect key="frame" x="18" y="342" width="118" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="boundsYChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="QUd-zb-lNX"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="frame x = ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yLl-5P-LrC">
                                 <rect key="frame" x="142" y="210" width="158" height="21"/>
@@ -62,8 +78,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="boundsXLabel" destination="msV-mm-73P" id="97s-G0-IpB"/>
+                        <outlet property="boundsXSlider" destination="csx-2K-OHo" id="LML-Yo-wuE"/>
+                        <outlet property="boundsYLabel" destination="qVP-Q8-gfA" id="PZC-I4-z7b"/>
+                        <outlet property="boundsYSlider" destination="BEI-Ad-CV4" id="PFA-xu-dPF"/>
+                        <outlet property="frameXLabel" destination="yLl-5P-LrC" id="r8Y-pT-9Fp"/>
+                        <outlet property="frameXSlider" destination="RmC-fU-Fip" id="FVV-I2-R1A"/>
+                        <outlet property="frameYLabel" destination="eiv-8P-Yt2" id="DZ7-aT-d9s"/>
+                        <outlet property="frameYSlider" destination="OIO-Ve-Up4" id="quk-gQ-yO0"/>
+                        <outlet property="imageView" destination="EJf-5n-hZP" id="JYu-6Y-p7H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var frameXSlider: UISlider!
+    @IBOutlet weak var frameYSlider: UISlider!
+    @IBOutlet weak var boundsXSlider: UISlider!
+    @IBOutlet weak var boundsYSlider: UISlider!
+    
+    @IBOutlet weak var frameXLabel: UILabel!
+    @IBOutlet weak var frameYLabel: UILabel!
+    @IBOutlet weak var boundsXLabel: UILabel!
+    @IBOutlet weak var boundsYLabel: UILabel!
+    
+    @IBOutlet weak var frameWidthSlider: UISlider!
+    @IBOutlet weak var frameHeightSlider: UISlider!
+    @IBOutlet weak var boundWidthSlider: UISlider!
+    @IBOutlet weak var boundHeightSlider: UISlider!
+    
+    
     var yellowSquare: UIView?
 
     override func viewDidLoad() {
@@ -43,6 +64,16 @@ class ViewController: UIViewController {
         boundsYSlider.maximumValue = Float(bounds.size.height)
         boundsXSlider.value = Float(bounds.origin.x)
         boundsYSlider.value = Float(bounds.origin.y)
+        
+        frameWidthSlider.maximumValue = Float(superFrame.size.width)
+        frameHeightSlider.maximumValue = Float(superFrame.size.width)
+        frameWidthSlider.value = Float(frame.size.width)
+        frameHeightSlider.value = Float(frame.size.height)
+        
+        boundWidthSlider.maximumValue = Float(bounds.size.width * 2)
+        boundHeightSlider.maximumValue = Float(bounds.size.height * 2)
+        boundWidthSlider.value = Float(bounds.size.width)
+        boundHeightSlider.value = Float(bounds.size.height)
     }
 
     fileprivate func updateYellowSquare() {
@@ -73,5 +104,23 @@ class ViewController: UIViewController {
     @IBAction func boundsYChanged(_ sender: UISlider) {
         imageView.bounds.origin.y = CGFloat(sender.value)
         updateLabels()
+    }
+    
+    
+    
+    @IBAction func frameWidthChanged(_ sender: UISlider) {
+        imageView.frame.size.width = CGFloat(sender.value)
+    }
+    
+    @IBAction func frameheightChanged(_ sender: UISlider) {
+        imageView.frame.size.height = CGFloat(sender.value)
+    }
+    
+    @IBAction func boundWidthChanged(_ sender: UISlider) {
+        imageView.bounds.size.width = CGFloat(sender.value)
+    }
+    
+    @IBAction func boundHeightChanged(_ sender: UISlider) {
+        imageView.bounds.size.height = CGFloat(sender.value)
     }
 }

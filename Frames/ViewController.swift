@@ -10,7 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
     var yellowSquare: UIView?
-
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var boundsYSlider: UISlider!
+    @IBOutlet weak var boundsXSlider: UISlider!
+    @IBOutlet weak var frameYSlider: UISlider!
+   
+    @IBOutlet weak var frameXSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateLabels()
@@ -18,6 +26,10 @@ class ViewController: UIViewController {
         updateYellowSquare()
     }
 
+    @IBOutlet weak var boundsYLabel: UILabel!
+    @IBOutlet weak var boundsXLabel: UILabel!
+    @IBOutlet weak var frameYLabel: UILabel!
+    @IBOutlet weak var frameXLabel: UILabel!
     fileprivate func updateLabels() {
         let frame = imageView.frame
         let bounds = imageView.bounds
